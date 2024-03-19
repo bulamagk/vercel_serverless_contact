@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "methods": ["GET"],
+      "dest": "/api/welcome.js"
+    },
+    {
+      "src": "/api/contact",
+      "methods": ["GET", "POST"],
+      "dest": "api/contact.js"
+    }
+  ]
+}
