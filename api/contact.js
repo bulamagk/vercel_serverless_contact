@@ -1,10 +1,19 @@
 const axios = require("axios");
+const sendMail = require("../utils/sendMail");
 
 module.exports = async (req, res) => {
-  try {
-    const respond = await axios.get(process.env.URL);
-    res.json(await respond.data);
-  } catch (error) {
-    res.status(500).json({ status: `Server Error: ${error.message}` });
+  const formdata = req.body;
+  switch (req.method) {
+    case "POST":
+      const result = await sendMail(formdata);
+      if (result.success) {
+        res.send(result);
+      } else {
+        res.send(result);
+      }
+      break;
+
+    default:
+      res.send("Invalid method");
   }
 };
