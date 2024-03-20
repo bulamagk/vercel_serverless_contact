@@ -9,6 +9,11 @@
       "src": "/api/contact",
       "methods": ["GET", "POST"],
       "dest": "api/contact.js"
+    },
+    {
+      "src": "/api/users",
+      "methods": ["GET", "POST"],
+      "dest": "api/users.js"
     }
   ]
 }
