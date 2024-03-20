@@ -1,8 +1,8 @@
-const axios = require("axios");
 const sendMail = require("../utils/sendMail");
 
 module.exports = async (req, res) => {
   const formdata = req.body;
+
   switch (req.method) {
     case "POST":
       const result = await sendMail(formdata);

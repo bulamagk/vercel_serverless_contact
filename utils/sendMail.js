@@ -17,13 +17,10 @@ module.exports = async function sendMail(data) {
       user: process.env.USER,
       pass: process.env.PASS,
     },
-    tls: {
-      rejectUnauthorized: false,
-    },
   });
 
   // Mail Options
-  const from = "no_reply@arisfarm.com";
+  const from = process.env.USER;
   const to = "bulamagk@gmail.com";
   const subject = `New Message From ${firstname}`;
 
@@ -32,7 +29,6 @@ module.exports = async function sendMail(data) {
     <p>Name: ${firstname} ${lastname} </p>
     <p>Email: ${email}</p>
     <p>Phone Number: ${phone}</p>
-    <br>
     <br>
     <h3>Message</h3>
     <p>${message}</p>
